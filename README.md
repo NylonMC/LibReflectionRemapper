@@ -1,4 +1,6 @@
-# Fabric Example Mod
+# LibReflectionRemapper
+
+Library For Remapping Reflection In a fabric-loader Environment
 
 ## Setup
 
