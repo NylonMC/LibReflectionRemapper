@@ -92,6 +92,19 @@ public class LibReflectionRemapper {
     }
 
     /**
+     * Gets The Name Of A Class In The Current Namespace
+     * @param slashed_class The Fully Qualified Class With Slashes
+     * @return The Method Name
+     */
+    public static String getClassName(String slashed_class) {
+        if (nativelyIntermediary) {
+            return namedClassToIntermediary.get(slashed_class);
+        } else {
+            return FabricLoader.getInstance().getMappingResolver().mapClassName("intermediary", namedClassToIntermediary.get(slashed_class).replace('/', '.'));
+        }
+    }
+
+    /**
      * Gets The Name Of A Method In The Current Namespace
      * @param klazz The Class The Method Belongs To
      * @param unobfname The Human Readable Name In The NylonMC Mappings
